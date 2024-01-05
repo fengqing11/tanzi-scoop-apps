@@ -87,11 +87,11 @@ scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps
 - ZvonimirSun/scoop-iszy
 - kiennq/scoop-misc
 - wangzq/scoop-bucket
+- ViCrack/scoop-bucket
 - zhoujin7/tomato
 - akirco/aki-apps
 - wzv5/ScoopBucket
 - TheRandomLabs/Scoop-Python
-- ViCrack/scoop-bucket
 - niheaven/scoop-sysinternals
 - charmbracelet/scoop-bucket
 - naderi/scoop-bucket
@@ -125,6 +125,7 @@ scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps
 - ChinLong/scoop-customize
 - yuusakuri/scoop-bucket
 - Darkatse/Scoop-KanColle
+- babo4d/scoop-xrtools
 - AkinoKaede/maple
 - FlawlessCasual17/MyScoop
 - The-Simples/scoop-minecraft
