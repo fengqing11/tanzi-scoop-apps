@@ -1,6 +1,6 @@
 {
-    "version": "0.10.2",
-    "description": "A fast, accurate, and portable GBA emulator",
+    "version": "8291-20240108",
+    "description": "Nintendo Game Boy Advance emulator",
     "homepage": "https://mgba.io/",
     "license": {
         "identifier": "MPL-2.0",
@@ -8,14 +8,14 @@
     },
     "architecture": {
         "32bit": {
-            "url": "https://github.com/mgba-emu/mgba/releases/download/0.10.2/mGBA-0.10.2-win32.7z",
-            "hash": "befa7cc1b7044094d80bcce840986c6bae8685c5e2dcacf140dd7208505e9e07",
-            "extract_dir": "mGBA-0.10.2-win32"
+            "url": "https://s3.amazonaws.com/mgba/build/mGBA-build-2024-01-08-win32-8291-72a620a484cebd05696a4c69a1120dc58973b65e.7z",
+            "hash": "a3018fcf30f045077d27e2cd11d95a3bca51a68971c941a2e19e1613099c6e60",
+            "extract_dir": "mGBA-build-2024-01-08-win32-8291-72a620a484cebd05696a4c69a1120dc58973b65e"
         },
         "64bit": {
-            "url": "https://github.com/mgba-emu/mgba/releases/download/0.10.2/mGBA-0.10.2-win64.7z",
-            "hash": "63843af6f9e01fc2e9b606b45b548ce5427237eb8b8843837c74657548a45393",
-            "extract_dir": "mGBA-0.10.2-win64"
+            "url": "https://s3.amazonaws.com/mgba/build/mGBA-build-2024-01-08-win64-8291-72a620a484cebd05696a4c69a1120dc58973b65e.7z",
+            "hash": "dcf30ed053c4c54f60228e6da3fd397900201ce09195a8dde918f565a4fc459c",
+            "extract_dir": "mGBA-build-2024-01-08-win64-8291-72a620a484cebd05696a4c69a1120dc58973b65e"
         }
     },
     "pre_install": [
@@ -39,13 +39,17 @@
     "bin": [
         [
             "mGBA.exe",
-            "mgba-sdl.exe"
+            "mgba-dev"
+        ],
+        [
+            "mgba-sdl.exe",
+            "mgba-sdl-dev"
         ]
     ],
     "shortcuts": [
         [
             "mGBA.exe",
-            "mGBA"
+            "Nintendo Gane Boy Advance [gba][mgba] (dev)"
         ]
     ],
     "persist": [
@@ -61,17 +65,19 @@
         "portable.ini"
     ],
     "checkver": {
-        "github": "https://github.com/mgba-emu/mgba"
+        "url": "https://mgba.io/builds/1/",
+        "regex": "build-(?<year>20\\d{2})-(?<month>\\d{2})-(?<day>\\d{2})-win32-(?<ver>[\\d]+)-(?<git>\\w{40})\\.7z",
+        "replace": "$4-$1$2$3"
     },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://github.com/mgba-emu/mgba/releases/download/$version/mGBA-$version-win32.7z",
-                "extract_dir": "mGBA-$version-win32"
+                "url": "https://s3.amazonaws.com/mgba/build/mGBA-build-$matchYear-$matchMonth-$matchDay-win32-$matchVer-$matchGit.7z",
+                "extract_dir": "mGBA-build-$matchYear-$matchMonth-$matchDay-win32-$matchVer-$matchGit"
             },
             "64bit": {
-                "url": "https://github.com/mgba-emu/mgba/releases/download/$version/mGBA-$version-win64.7z",
-                "extract_dir": "mGBA-$version-win64"
+                "url": "https://s3.amazonaws.com/mgba/build/mGBA-build-$matchYear-$matchMonth-$matchDay-win64-$matchVer-$matchGit.7z",
+                "extract_dir": "mGBA-build-$matchYear-$matchMonth-$matchDay-win64-$matchVer-$matchGit"
             }
         }
     }
