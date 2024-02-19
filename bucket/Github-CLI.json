@@ -1,0 +1,38 @@
+{
+    "homepage": "https://cli.github.com/",
+    "description": "GitHub on the command line",
+    "license": "MIT",
+    "version": "2.44.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/cli/cli/releases/download/v2.44.0/gh_2.44.0_windows_amd64.zip",
+            "hash": "ed21ce8bc247148ec7ccff2208962ac6c8a0795a960c4d483080fe13cf5c41ae"
+        },
+        "32bit": {
+            "url": "https://github.com/cli/cli/releases/download/v2.44.0/gh_2.44.0_windows_386.zip",
+            "hash": "f496c01a607dcd62218739d108ce6b30d0df13068a877e6c48dae4a0abab9893"
+        }
+    },
+    "bin": "bin\\gh.exe",
+    "checkver": {
+        "github": "https://github.com/cli/cli"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/cli/cli/releases/download/v$version/gh_$version_windows_amd64.zip",
+                "hash": {
+                    "url": "https://github.com/cli/cli/releases/download/v$version/gh_$version_checksums.txt",
+                    "find": "($sha256)\\s+gh_$version_windows_amd64.zip"
+                }
+            },
+            "32bit": {
+                "url": "https://github.com/cli/cli/releases/download/v$version/gh_$version_windows_386.zip",
+                "hash": {
+                    "url": "https://github.com/cli/cli/releases/download/v$version/gh_$version_checksums.txt",
+                    "find": "($sha256)\\s+gh_$version_windows_386.zip"
+                }
+            }
+        }
+    }
+}
