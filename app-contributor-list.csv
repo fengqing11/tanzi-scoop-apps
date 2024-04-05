@@ -5879,7 +5879,7 @@ xenia_hermanjustnu.json,hermanjustnu/scoop-emulators
 cemu_hermanjustnu.json,hermanjustnu/scoop-emulators
 fceux-dev.json,hermanjustnu/scoop-emulators
 mameui.json,hermanjustnu/scoop-emulators
-rpcs3_hermanjustnu.json,hermanjustnu/scoop-emulators
+rpcs3.json,hermanjustnu/scoop-emulators
 ryujinx.json,hermanjustnu/scoop-emulators
 hoxs64.json,hermanjustnu/scoop-emulators
 scummvm_hermanjustnu.json,hermanjustnu/scoop-emulators
@@ -6717,7 +6717,7 @@ mgba-dev_borger.json,borger/scoop-emulators
 xenia_borger.json,borger/scoop-emulators
 cemu_borger.json,borger/scoop-emulators
 rpcs3_borger.json,borger/scoop-emulators
-pcsx2-dev.json,borger/scoop-emulators
+pcsx2-dev_borger.json,borger/scoop-emulators
 ryujinx_borger.json,borger/scoop-emulators
 scummvm_borger.json,borger/scoop-emulators
 redream_borger.json,borger/scoop-emulators
@@ -8225,6 +8225,7 @@ texniccenter_naderi.json,naderi/scoop-bucket
 netsetman.json,naderi/scoop-bucket
 miktex_naderi.json,naderi/scoop-bucket
 font-parastoo.json,naderi/scoop-bucket
+uninstalr_naderi.json,naderi/scoop-bucket
 kmplayer.json,naderi/scoop-bucket
 font-farbod.json,naderi/scoop-bucket
 api-monitor_naderi.json,naderi/scoop-bucket
@@ -8829,7 +8830,7 @@ imagine_hu3rror.json,hu3rror/scoop-muggle
 geminicommit-cli.json,hu3rror/scoop-muggle
 cdnlookup.json,hu3rror/scoop-muggle
 mangadex-dl.json,hu3rror/scoop-muggle
-umi-ocr-paddle_hu3rror.json,hu3rror/scoop-muggle
+umi-ocr-paddle.json,hu3rror/scoop-muggle
 qaac-qtfiles.json,hu3rror/scoop-muggle
 slk-img2pixel.json,hu3rror/scoop-muggle
 win11-classic-context-menu.json,hu3rror/scoop-muggle
@@ -8947,7 +8948,7 @@ imewlconverter_hu3rror.json,hu3rror/scoop-muggle
 foobar2000-foobox-en-pack.json,hu3rror/scoop-muggle
 chatbox_hu3rror.json,hu3rror/scoop-muggle
 nora.json,hu3rror/scoop-muggle
-umi-ocr-rapid_hu3rror.json,hu3rror/scoop-muggle
+umi-ocr-rapid.json,hu3rror/scoop-muggle
 mpv-handler.json,hu3rror/scoop-muggle
 uup-download-wizard-converter.json,hu3rror/scoop-muggle
 rimage_hu3rror.json,hu3rror/scoop-muggle
