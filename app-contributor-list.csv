@@ -3395,7 +3395,7 @@ ofview.json,ScoopInstaller/Nirsoft
 driveletterview_ScoopInstaller.json,ScoopInstaller/Nirsoft
 produkey_ScoopInstaller.json,ScoopInstaller/Nirsoft
 fileaccesserrorview_ScoopInstaller.json,ScoopInstaller/Nirsoft
-searchmyfiles_ScoopInstaller.json,ScoopInstaller/Nirsoft
+searchmyfiles.json,ScoopInstaller/Nirsoft
 countrytraceroute_ScoopInstaller.json,ScoopInstaller/Nirsoft
 cleanafterme_ScoopInstaller.json,ScoopInstaller/Nirsoft
 htmlastext_ScoopInstaller.json,ScoopInstaller/Nirsoft
@@ -5456,7 +5456,6 @@ MicrosoftEdgeDev-Portable.json,ACooper81/scoop-apps
 4KSlideshowMaker-Install.json,ACooper81/scoop-apps
 NitroShare-Portable.json,ACooper81/scoop-apps
 EarTrumpet-Portable.json,ACooper81/scoop-apps
-VideoReDoTVSuiteV6-Install.json,ACooper81/scoop-apps
 IMMagicPartitionResizer-Portable.json,ACooper81/scoop-apps
 GitHubDesktop-Install.json,ACooper81/scoop-apps
 snova-asioCLI-Portable.json,ACooper81/scoop-apps
@@ -6980,6 +6979,7 @@ bc4.json,wangzq/scoop-bucket
 nvidia.ConfigureMosaic.json,wangzq/scoop-bucket
 etcd_wangzq.json,wangzq/scoop-bucket
 linqpad8-beta.json,wangzq/scoop-bucket
+topmost.json,ViCrack/scoop-bucket
 siyuan-ce.json,ViCrack/scoop-bucket
 newfiletime_ViCrack.json,ViCrack/scoop-bucket
 suo5.json,ViCrack/scoop-bucket
@@ -7697,6 +7697,7 @@ deoldify-net.json,DoveBoy/Apps
 clash-rev-compatible.json,DoveBoy/Apps
 starship_DoveBoy.json,DoveBoy/Apps
 windows11-classic-context-menu.json,DoveBoy/Apps
+nilesoft-shell.json,DoveBoy/Apps
 final2x-portable.json,DoveBoy/Apps
 handbrake_DoveBoy.json,DoveBoy/Apps
 powertoys_DoveBoy.json,DoveBoy/Apps
@@ -7756,7 +7757,7 @@ winfetch_DoveBoy.json,DoveBoy/Apps
 linuxdoc.json,DoveBoy/Apps
 clashwarden.json,DoveBoy/Apps
 sharpthief.json,DoveBoy/Apps
-v2rayn.json,DoveBoy/Apps
+v2rayn_DoveBoy.json,DoveBoy/Apps
 autodarkmode_DoveBoy.json,DoveBoy/Apps
 mobaxterm.json,DoveBoy/Apps
 krita.json,DoveBoy/Apps
@@ -7847,7 +7848,7 @@ pls.json,DoveBoy/Apps
 network-proxy-flutter.json,DoveBoy/Apps
 gitalias.json,DoveBoy/Apps
 jenny.json,DoveBoy/Apps
-emeditor.json,DoveBoy/Apps
+emeditor_DoveBoy.json,DoveBoy/Apps
 final2x.json,DoveBoy/Apps
 wechatdownload.json,DoveBoy/Apps
 imageglass.json,DoveBoy/Apps
@@ -8584,6 +8585,7 @@ ls-interactive.json,amorphobia/siku
 parallels-client.json,amorphobia/siku
 radarr_amorphobia.json,amorphobia/siku
 vmping.json,amorphobia/siku
+pixpin_amorphobia.json,amorphobia/siku
 setacl.json,amorphobia/siku
 dgmpgdec.json,amorphobia/siku
 xmcl.json,amorphobia/siku
@@ -9870,7 +9872,7 @@ sumatrapdf-stable.json,ShuguangSun/sgs-scoop-bucket
 difftastic_ShuguangSun.json,ShuguangSun/sgs-scoop-bucket
 openjdk17_ShuguangSun.json,ShuguangSun/sgs-scoop-bucket
 openjdk13_ShuguangSun.json,ShuguangSun/sgs-scoop-bucket
-foobar2000.json,ShuguangSun/sgs-scoop-bucket
+foobar2000_ShuguangSun.json,ShuguangSun/sgs-scoop-bucket
 r-devel_ShuguangSun.json,ShuguangSun/sgs-scoop-bucket
 Victor-Mono_ShuguangSun.json,ShuguangSun/sgs-scoop-bucket
 mononoki_ShuguangSun.json,ShuguangSun/sgs-scoop-bucket
