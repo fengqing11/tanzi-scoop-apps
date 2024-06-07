@@ -68,8 +68,8 @@ scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps
 - hoilc/scoop-lemon
 - ScoopInstaller/Nirsoft
 - kkzzhizhou/scoop-zapps
-- scoopcn/scoopcn
 - rasa/scoops
+- scoopcn/scoopcn
 - kidonng/sushi
 - Paxxs/Cluttered-bucket
 - ScoopInstaller/Nonportable
@@ -107,8 +107,8 @@ scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps
 - brian6932/dank-scoop
 - jfut/scoop-jfut
 - AStupidBear/scoop-bear
-- aliesbelik/poldi
 - cc713/ownscoop
+- aliesbelik/poldi
 - starise/Scoop-Gaming
 - aoisummer/scoop-bucket
 - Velgus/Scoop-Portapps
@@ -121,8 +121,8 @@ scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps
 - starise/Scoop-Confetti
 - AkariiinMKII/Scoop4kariiin
 - SayCV/scoop-cvp
-- beerpiss/scoop-bucket
 - s0nd9r/scoop-security
+- beerpiss/scoop-bucket
 - TianXiaTech/scoop-txt
 - littleli/Scoop-littleli
 - KnotUntied/scoop-fonts
