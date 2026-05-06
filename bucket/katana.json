@@ -1,12 +1,12 @@
 {
-    "version": "1.5.0",
+    "version": "1.6.1",
     "description": "A next-generation crawling and spidering framework.",
     "homepage": "https://github.com/projectdiscovery/katana",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/projectdiscovery/katana/releases/download/v1.5.0/katana_1.5.0_windows_amd64.zip",
-            "hash": "fa2bb07fdfc4173fd5db16627b4ff5d573190e8ffef4de6d580c6660ff6bae17"
+            "url": "https://github.com/projectdiscovery/katana/releases/download/v1.6.1/katana_1.6.1_windows_amd64.zip",
+            "hash": "50e11bda86faa3f7013e2f2764ff75dafd220a3425f0a509c248432e4dcf8dd7"
         }
     },
     "bin": "katana.exe",

@@ -1,12 +1,12 @@
 {
-    "version": "3.1.2",
+    "version": "3.1.4",
     "description": "A file server offering a virtual file system (vfs).",
     "homepage": "https://rejetto.com/hfs",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rejetto/hfs/releases/download/v3.1.2/hfs-windows-x64-3.1.2.zip",
-            "hash": "cf6dc594fb09dff109c47452046cffc96235977720da5327108e2340375ded72"
+            "url": "https://github.com/rejetto/hfs/releases/download/v3.1.4/hfs-windows-x64-3.1.4.zip",
+            "hash": "315b4bbbb49096eac6f48154becf63965ba8a88eaff7b0675a448ed7c1122eb0"
         }
     },
     "bin": "hfs.exe",

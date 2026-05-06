@@ -1,15 +1,15 @@
 {
     "homepage": "https://monkeysaudio.com/",
-    "version": "12.82",
+    "version": "12.85",
     "license": "",
     "architecture": {
         "64bit": {
-            "url": "https://monkeysaudio.com/files/MAC_1282_x64.exe",
-            "hash": "8e4802990ca18548eb7d6b950f6eec543c6128e31d75952728d38567a07d4188"
+            "url": "https://monkeysaudio.com/files/MAC_1285_x64.exe",
+            "hash": "88dddab545225323cbc3877c9630234ed6f7b1bbacbc547702065ba11becbbb6"
         },
         "32bit": {
-            "url": "https://monkeysaudio.com/files/MAC_1282.exe",
-            "hash": "43f09205f288547a46743bbd1ffca1a0046ba88f83df7e6221cef3393ef649c4"
+            "url": "https://monkeysaudio.com/files/MAC_1285.exe",
+            "hash": "fc2942eeb8603ba47cd10caf7f638a96be6d2a927c0f072066427b6fdbde9cc3"
         }
     },
     "innosetup": true,
