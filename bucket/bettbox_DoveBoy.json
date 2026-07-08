@@ -1,5 +1,5 @@
 {
-    "version": "1.2.21.2408",
+    "version": "1.18.4",
     "description": "Another Better Mihomo Client",
     "homepage": "https://github.com/appshubcc/Bettbox",
     "license": {
@@ -8,30 +8,15 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/KaringX/karing/releases/download/v1.2.21.2408/karing_1.2.21.2408_windows_x64.exe",
-            "hash": "37c2c0f52510dd19a0bef3ff9e8f159f7d9214f47b61cd12be160297e62615ed"
+            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.18.4/Bettbox-1.18.4-windows-amd64-setup.exe",
+            "hash": "0b7a50c261a35c81583bc5cd19029b271dd91781b37fc863bb93d1aaafa7362e"
         },
         "arm64": {
-            "url": "https://github.com/KaringX/karing/releases/download/v1.2.21.2408/karing_1.2.21.2408_windows_x64.exe",
-            "hash": "37c2c0f52510dd19a0bef3ff9e8f159f7d9214f47b61cd12be160297e62615ed"
+            "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.18.4/Bettbox-1.18.4-windows-arm64-setup.exe",
+            "hash": "80e9605fcff640b749f7e58d66c947040945527585bdf5e3bbbd49746365dccd"
         }
     },
     "innosetup": true,
-    "installer": {
-        "script": [
-            "# handle runtime cache",
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name apps) scripts/AppsUtils.psm1)",
-            "Mount-ExternalRuntimeData -Source \"$persist_dir\\appdata\" -Target \"$env:APPDATA\\Bettbox\"",
-            "Remove-Module -Name AppsUtils"
-        ]
-    },
-    "uninstaller": {
-        "script": [
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name apps) scripts/AppsUtils.psm1)",
-            "Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\Bettbox\"",
-            "Remove-Module -Name AppsUtils"
-        ]
-    },
     "bin": "Bettbox.exe",
     "shortcuts": [
         [
