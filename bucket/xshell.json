@@ -1,39 +1,29 @@
-{
-    "version": "8.0.0110r",
-    "description": "The Industry’s Most Powerful SSH Client",
-    "homepage": "https://www.423down.com/8196.html",
-    "license": "Proprietary",
-    "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/iIBCV46k04ch&type=down#/dl.7z",
-    "hash": "e52bcc2aea932d5955573e3966e2b92b4fa2a17273d8b13e89bb985a4d8440ba",
+﻿{
+    "version": "7.0.0056",
+    "description": "NetSarang Xshell 绿色特别版",
+    "homepage": "https://www.yijingying.com/1249.html",
+    "depends": "vcredist-aio",
+    "url": "https://github.com/SayCV/gh-cdn-cvp/releases/download/v1.0.0/xshell-v7.0.0056-cvp.7z",
+    "hash": "704b6be2eea992b4ed30371710d08b19824ba5da2f03529211789a2ab11ee9f5",
     "extract_dir": "Xshell",
+    "extract_to": "Programs",
+    "installer": {
+        "script": "Start-Process 'cmd' -ArgumentList @('/c', \"$dir\\Programs\\!)绿化处理.bat\") -Verb RunAs -Wait | Out-Null"
+    },
+    "uninstaller": {
+        "script": "Start-Process 'cmd' -ArgumentList @('/c', \"$dir\\Programs\\!)卸载清除.bat\") -Verb RunAs -Wait | Out-Null"
+    },
     "shortcuts": [
         [
-            "Xshell.exe",
-            "Xshell 8",
-            "",
-            "XshellIcon.ico"
+            "Programs\\xshell.exe",
+            "NetSarang Xshell 2020"
         ]
     ],
-    "env_add_path": "$dir",
-    "installer": {
-        "script": "Invoke-ExternalCommand \"$dir\\!)绿化处理.bat\" -Quiet"
-    },
-    "pre_uninstall": [
-        "(Get-Content \"$dir\\!)卸载移除.bat\") -replace 'CHOICE /C 1 /N >NUL 2>NUL', 'exit /b' | Set-Content \"$dir\\!)卸载移除.bat\"",
-        "Invoke-ExternalCommand \"$dir\\!)卸载移除.bat\" -Quiet",
-        "$bucket = $install.bucket",
-        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
-        "Stop-App"
-    ],
     "checkver": {
-        "script": [
-            ". \"$pwd\\bin\\utils.ps1\"",
-            "$f = Get-LanzouList \"https://423down.lanzouo.com/b0f19ry9g\" | Where-Object { $_.name_all -like \"Xshell-*-Modified-Green.7z\" } | Select-Object -First 1",
-            "$f.name_all + '=====' + $f.id"
-        ],
-        "regex": "Xshell-(.*)-Modified-Green.7z=====(?<sharekey>.*)"
+        "github": "https://github.com/SayCV/gh-cdn-cvp/releases",
+        "regex": "xshell-v([\\d.-]+)-cvp.7z"
     },
     "autoupdate": {
-        "url": "https://api.xrgzs.top/sdlp/lanzou/?url=https://www.lanzoui.com/$matchSharekey&type=down#/dl.7z"
+        "url": "https://github.com/SayCV/gh-cdn-cvp/releases/download/v1.0.0/xshell-v$version-cvp.7z"
     }
 }
