@@ -1,0 +1,45 @@
+{
+    "version": "0.19.0",
+    "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+    "homepage": "https://getartcraft.com/apps/cadcraft",
+    "license": "MIT|Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/storytold/cadcraft/releases/download/v0.19.0/cadcraft-0.19.0-windows-x64-portable.zip",
+            "hash": "38fa68aafef23e0ebbef78721180634e8a24ce6f7c590bbaabf003e7e9d88731",
+            "extract_dir": "cadcraft-0.19.0-windows-x64-portable"
+        },
+        "arm64": {
+            "url": "https://github.com/storytold/cadcraft/releases/download/v0.19.0/cadcraft-0.19.0-windows-arm64-portable.zip",
+            "hash": "1bc4a43ab0cffd60751b517b4c5ee40e32548a9e620176a0d22e2877fb66f1ea",
+            "extract_dir": "cadcraft-0.19.0-windows-arm64-portable"
+        }
+    },
+    "bin": "cadcraft-cli.exe",
+    "shortcuts": [
+        [
+            "cadcraft.exe",
+            "CADCraft"
+        ]
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/storytold/cadcraft/releases",
+        "jp": "$[0].tag_name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/storytold/cadcraft/releases/download/v$version/cadcraft-$version-windows-x64-portable.zip",
+                "extract_dir": "cadcraft-$version-windows-x64-portable"
+            },
+            "arm64": {
+                "url": "https://github.com/storytold/cadcraft/releases/download/v$version/cadcraft-$version-windows-arm64-portable.zip",
+                "extract_dir": "cadcraft-$version-windows-arm64-portable"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS.txt"
+        }
+    }
+}

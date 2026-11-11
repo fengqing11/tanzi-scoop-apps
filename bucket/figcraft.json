@@ -1,0 +1,45 @@
+{
+    "version": "0.17.0",
+    "description": "FigCraft: interface design and prototyping; an open-source, clean-room reimplementation of collaborative design workflows in pure Rust",
+    "homepage": "https://getartcraft.com/apps/figcraft",
+    "license": "MIT|Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/storytold/figcraft/releases/download/v0.17.0/figcraft-0.17.0-windows-x64-portable.zip",
+            "hash": "40912deff59d5739ca31bf9dc67c4d0f1248b7e1e139b5fe1bb85998dc322b0a",
+            "extract_dir": "figcraft-0.17.0-windows-x64-portable"
+        },
+        "arm64": {
+            "url": "https://github.com/storytold/figcraft/releases/download/v0.17.0/figcraft-0.17.0-windows-arm64-portable.zip",
+            "hash": "4c4c6b62a6fe580c32ff934ac050f7aa54935834df05e2f8f7e9739d3a0c0bb0",
+            "extract_dir": "figcraft-0.17.0-windows-arm64-portable"
+        }
+    },
+    "bin": "figcraft-cli.exe",
+    "shortcuts": [
+        [
+            "figcraft.exe",
+            "FigCraft"
+        ]
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/storytold/figcraft/releases",
+        "jp": "$[0].tag_name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/storytold/figcraft/releases/download/v$version/figcraft-$version-windows-x64-portable.zip",
+                "extract_dir": "figcraft-$version-windows-x64-portable"
+            },
+            "arm64": {
+                "url": "https://github.com/storytold/figcraft/releases/download/v$version/figcraft-$version-windows-arm64-portable.zip",
+                "extract_dir": "figcraft-$version-windows-arm64-portable"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS.txt"
+        }
+    }
+}

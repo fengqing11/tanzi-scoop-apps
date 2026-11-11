@@ -1,0 +1,45 @@
+{
+    "version": "0.23.0",
+    "description": "VectorCraft: An open-source, vector art tool written by scratch in pure Rust",
+    "homepage": "https://getartcraft.com/apps/vectorcraft",
+    "license": "MIT|Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/storytold/vectorcraft/releases/download/v0.23.0/vectorcraft-0.23.0-windows-x64-portable.zip",
+            "hash": "a3995376d0871afa3002a55f83b4c5666d17fe223fe72e57b4a2b8cc56657a7a",
+            "extract_dir": "vectorcraft-0.23.0-windows-x64-portable"
+        },
+        "arm64": {
+            "url": "https://github.com/storytold/vectorcraft/releases/download/v0.23.0/vectorcraft-0.23.0-windows-arm64-portable.zip",
+            "hash": "99cb07dbd3d43249df2f53371474e8c610d0f79c874538dd369166eb060ac9e1",
+            "extract_dir": "vectorcraft-0.23.0-windows-arm64-portable"
+        }
+    },
+    "bin": "vectorcraft-cli.exe",
+    "shortcuts": [
+        [
+            "vectorcraft.exe",
+            "VectorCraft"
+        ]
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/storytold/vectorcraft/releases",
+        "jp": "$[0].tag_name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/storytold/vectorcraft/releases/download/v$version/vectorcraft-$version-windows-x64-portable.zip",
+                "extract_dir": "vectorcraft-$version-windows-x64-portable"
+            },
+            "arm64": {
+                "url": "https://github.com/storytold/vectorcraft/releases/download/v$version/vectorcraft-$version-windows-arm64-portable.zip",
+                "extract_dir": "vectorcraft-$version-windows-arm64-portable"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS.txt"
+        }
+    }
+}
