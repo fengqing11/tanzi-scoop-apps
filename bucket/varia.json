@@ -1,32 +1,19 @@
 {
-    "version": "2026.8.5-1",
-    "description": "Download manager based on aria2",
+    "version": "2026.11.16",
+    "description": "Quick and efficient download manager.",
     "homepage": "https://giantpinkrobots.github.io/varia/",
-    "license": {
-        "identifier": "MPL-2.0 license",
-        "url": "https://github.com/giantpinkrobots/varia#MPL-2.0-1-ov-file"
-    },
-    "url": "https://github.com/giantpinkrobots/varia/releases/download/v2026.8.5-1/varia-windows-setup-amd64.exe",
-    "hash": "3daaa666727156cd667abebb247e547fed15a1d6c8eb7b7395dd924ea240a2a3",
-    "innosetup": true,
-    "bin": [
-        [
-            "variamain.exe",
-            "varia"
-        ]
-    ],
+    "url": "https://github.com/giantpinkrobots/varia/releases/download/v2026.11.16/varia-windows-portable-amd64.zip",
+    "hash": "0d41e6d6b8d68ef8f06af64dff34458371f6e722d11c5bfa13f0d8e371b689c7",
     "shortcuts": [
         [
             "variamain.exe",
-            "varia"
+            "Varia"
         ]
     ],
     "checkver": {
-        "github": "https://api.github.com/repos/giantpinkrobots/varia/releases",
-        "jp": "$[*].assets[*].browser_download_url",
-        "regex": "/releases/download/v([\\d.-]+)/varia-windows"
+        "github": "https://github.com/giantpinkrobots/varia"
     },
     "autoupdate": {
-        "url": "https://github.com/giantpinkrobots/varia/releases/download/v$version/varia-windows-setup-amd64.exe"
+        "url": "https://github.com/giantpinkrobots/varia/releases/download/v$version/varia-windows-portable-amd64.zip"
     }
 }
