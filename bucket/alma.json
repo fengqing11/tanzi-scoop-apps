@@ -1,52 +1,21 @@
 {
-    "version": "0.4.778",
-    "description": "GUI client for herdr: Claude Code, Codex and pi agent sessions as clean chats.",
-    "homepage": "https://alma.now",
-    "license": "MIT",
+    "version": "0.4.836",
+    "description": "Elegant AI Provider Orchestration",
+    "homepage": "https://alma.now/",
+    "license": "Proprietary",
+    "##": "0.4.5xx 起上游改用自研 almapack 打包: 安装包内是平铺的应用文件, 不再有 electron-builder 的 $PLUGINSDIR/app-64.7z. pre_install 兼容两种布局",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/yetone/alma-releases/releases/download/v0.4.778/alma-0.4.778-win-x64.exe#/dl.7z",
-            "hash": "sha512:6b48cb5016f3ddbc7a783172750f3220b068ab8b1e292a35516335cef218a700782cc3cd708bbeb6f1dc6daea3ef577598475f1d75125229b25e430f8a964e27",
+            "url": "https://github.com/yetone/alma-releases/releases/download/v0.4.836/alma-0.4.836-win-x64.exe#/dl.7z",
+            "hash": "e9e5076c3bb3b47a90dc3642109f340cb0602d9b641bd30daddac679d22a6540",
             "pre_install": [
-                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
-                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse"
+                "$archive = \"$dir\\`$PLUGINSDIR\\app-64.7z\"",
+                "if (Test-Path $archive) { Expand-7zipArchive $archive $dir }",
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall.exe\" -Force -Recurse -ErrorAction SilentlyContinue",
+                "if (!(Test-Path \"$dir\\Alma.exe\")) { throw 'Alma.exe not found after extraction' }"
             ]
         }
     },
-    "persist_external": [
-        [
-            "$env:AppData\\alma",
-            "data",
-            "directory"
-        ],
-        [
-            "$env:USERPROFILE\\.config\\alma",
-            "config",
-            "directory"
-        ],
-        [
-            "$env:USERPROFILE\\.alma",
-            "activity",
-            "directory"
-        ],
-        [
-            "$env:USERPROFILE\\.cache\\alma",
-            "cache",
-            "directory"
-        ]
-    ],
-    "post_install": [
-        "$helper = (Resolve-Path \"$bucketsdir/*/scripts/persist-external.ps1\" -ErrorAction SilentlyContinue | Select-Object -First 1).Path",
-        "if (!$helper) { throw 'persist_external: persist-external.ps1 not found under scripts/ in any bucket' }",
-        ". $helper",
-        "Invoke-PersistExternalInstall"
-    ],
-    "pre_uninstall": [
-        "$helper = (Resolve-Path \"$bucketsdir/*/scripts/persist-external.ps1\" -ErrorAction SilentlyContinue | Select-Object -First 1).Path",
-        "if (!$helper) { throw 'persist_external: persist-external.ps1 not found under scripts/ in any bucket' }",
-        ". $helper",
-        "Invoke-PersistExternalUninstall"
-    ],
     "shortcuts": [
         [
             "Alma.exe",
@@ -57,14 +26,23 @@
         "github": "https://github.com/yetone/alma-releases"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/yetone/alma-releases/releases/download/v$version/alma-$version-win-x64.exe#/dl.7z"
-            }
-        },
+        "url": "https://github.com/yetone/alma-releases/releases/download/v$version/alma-$version-win-x64.exe#/dl.7z",
         "hash": {
-            "url": "$baseurl/latest.yml",
-            "regex": "$basename\\s+sha512:\\s+$base64"
+            "mode": "extract",
+            "url": "https://github.com/yetone/alma-releases/releases/expanded_assets/v$version",
+            "regex": "alma-$version-win-x64\\.exe.*?sha256:$sha256"
         }
-    }
+    },
+    "post_uninstall": [
+        "$shim = Join-Path $env:LOCALAPPDATA 'Alma\\bin'",
+        "$key = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey('Environment', $true)",
+        "if ($key) {",
+        "    $raw = $key.GetValue('Path', '', [Microsoft.Win32.RegistryValueOptions]::DoNotExpandEnvironmentNames)",
+        "    $cur = @($raw -split ';' | Where-Object { $_ })",
+        "    $new = @($cur | Where-Object { $_.TrimEnd('\\') -ne $shim.TrimEnd('\\') })",
+        "    if ($new.Count -ne $cur.Count) { $key.SetValue('Path', ($new -join ';'), $key.GetValueKind('Path')) }",
+        "    $key.Close()",
+        "}",
+        "Remove-Item $shim -Recurse -Force -ErrorAction SilentlyContinue"
+    ]
 }
