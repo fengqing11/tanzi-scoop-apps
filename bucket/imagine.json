@@ -1,0 +1,109 @@
+{
+    "version": "2.8.1-20261116-46e9064",
+    "description": "Fast, compact image and animation viewer. Can be used as a standalone application or integrated as a Total Commander Lister plugin.",
+    "homepage": "https://www.nyam.pe.kr/dev/imagine/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.nyam.pe.kr/dev/imagine/#license"
+    },
+    "suggest": {
+        "Total Commander Plugin Host": "extras/totalcommander"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://raw.githubusercontent.com/nyam1003/imagine/46e906472156f9b1cf9c9890f6d9f3be3d17377c/x64/Imagine_2.8.1_x64_Unicode_Full.zip",
+            "hash": "e4281d4640bb17d713c78d572ed3eee5059a9db9b36f63b0ea5f40e5e540769d",
+            "bin": [
+                "Imagine64.exe",
+                [
+                    "Imagine64.exe",
+                    "Imagine"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "Imagine64.exe",
+                    "Imagine"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://raw.githubusercontent.com/nyam1003/imagine/46e906472156f9b1cf9c9890f6d9f3be3d17377c/Imagine_2.8.1_Unicode_Full.zip",
+            "hash": "c658814fb338dc83aa848f9331ecb61a1541739ac95506d07eb8867e21419341",
+            "bin": "Imagine.exe",
+            "shortcuts": [
+                [
+                    "Imagine.exe",
+                    "Imagine"
+                ]
+            ]
+        },
+        "arm64": {
+            "url": "https://raw.githubusercontent.com/nyam1003/imagine/46e906472156f9b1cf9c9890f6d9f3be3d17377c/arm64/Imagine_2.8.1_arm64_Unicode_Full.zip",
+            "hash": "766ab70dd59b7451b4d77690b67410c1f536ccc783395b6deac726a0f0954734",
+            "bin": [
+                "ImagineA64.exe",
+                [
+                    "ImagineA64.exe",
+                    "Imagine"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "ImagineA64.exe",
+                    "Imagine"
+                ]
+            ]
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\Imagine.ini\")) { New-Item \"$persist_dir\\Imagine.ini\" -Force | Out-Null }",
+        "",
+        "$tc_procs = Get-Process -Name \"totalcmd\", \"totalcmd64\" -ErrorAction SilentlyContinue",
+        "if ($tc_procs) {",
+        "    Write-Host \"[Error] Total Commander is currently running!\" -ForegroundColor Red",
+        "    Write-Host \"Installation aborted to protect directory structure. Please close Total Commander and try again.\" -ForegroundColor Yellow",
+        "    exit 1",
+        "}"
+    ],
+    "installer": {
+        "script": [
+            "$TCDir = $(appdir totalcommander $global)",
+            "",
+            "if ($TCDir -and (Test-Path \"$TCDir\\current\")) {",
+            "    Write-Host \"Found Total Commander, integrating plugin...\" -ForegroundColor Cyan",
+            "    ",
+            "    $PluginDir = \"$TCDir\\current\\plugins\\Wlx\\Imagine\"",
+            "    if (!(Test-Path \"$PluginDir\")) { New-Item \"$PluginDir\" -ItemType Directory -Force | Out-Null }",
+            "    ",
+            "    Copy-Item \"$dir\\*\" \"$PluginDir\" -Recurse -Force -Exclude \"Imagine.ini\", \"PlugInst.inf\"",
+            "    Write-Host \"Imagine plugin installed to: $PluginDir\" -ForegroundColor Green",
+            "} else {",
+            "    Write-Host \"Total Commander (Scoop) not found. Installing as standalone application only.\" -ForegroundColor Yellow",
+            "}"
+        ]
+    },
+    "persist": [
+        "Imagine.ini",
+        "PlugInst.inf",
+        "Plugin"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/nyam1003/imagine/commits/main",
+        "regex": "(?s)\"sha\":\\s*\"(?<sha>[0-9a-f]{7})(?<longsha>[0-9a-f]{33})\".*?\"date\":\\s*\"(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})T.*?\"filename\":\\s*\"Imagine_(?<version>[\\d.]+)_Unicode_Full\\.zip\"",
+        "replace": "${version}-${year}${month}${day}-${sha}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://raw.githubusercontent.com/nyam1003/imagine/$matchSha$matchLongsha/x64/Imagine_$matchVersion_x64_Unicode_Full.zip"
+            },
+            "32bit": {
+                "url": "https://raw.githubusercontent.com/nyam1003/imagine/$matchSha$matchLongsha/Imagine_$matchVersion_Unicode_Full.zip"
+            },
+            "arm64": {
+                "url": "https://raw.githubusercontent.com/nyam1003/imagine/$matchSha$matchLongsha/arm64/Imagine_$matchVersion_arm64_Unicode_Full.zip"
+            }
+        }
+    }
+}

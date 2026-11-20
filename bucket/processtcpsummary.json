@@ -1,0 +1,46 @@
+{
+    "version": "1.26",
+    "homepage": "https://www.nirsoft.net/utils/process_tcp_summary.html",
+    "bin": "ProcessTCPSummary.exe",
+    "shortcuts": [
+        [
+            "ProcessTCPSummary.exe",
+            "NirSoft\\ProcessTCPSummary"
+        ]
+    ],
+    "persist": [
+        "processtcpsummary_lng.ini",
+        "processtcpsummary.cfg"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://www.nirsoft.net/utils/processtcpsummary-x64.zip",
+            "hash": "dd6a589873e99956361db6ebde352963debb14155a4bd0152d71a5556998dd23"
+        },
+        "32bit": {
+            "url": "https://www.nirsoft.net/utils/processtcpsummary.zip",
+            "hash": "0c439b4fb96ca89e10d728ca57991243916a8ef0016653505cece15e69a1a9aa"
+        }
+    },
+    "description": "Displays TCP connections summary",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/processtcpsummary.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.nirsoft.net/utils/processtcpsummary-x64.zip"
+            },
+            "32bit": {
+                "url": "https://www.nirsoft.net/utils/processtcpsummary.zip"
+            }
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\processtcpsummary_lng.ini\") -and !(Test-Path \"$dir\\processtcpsummary_lng.ini\")) { New-Item \"$dir\\processtcpsummary_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\processtcpsummary.cfg\") -and !(Test-Path \"$dir\\processtcpsummary.cfg\")) { New-Item \"$dir\\processtcpsummary.cfg\" -ItemType File | Out-Null }"
+    ]
+}

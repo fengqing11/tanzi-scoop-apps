@@ -1,0 +1,31 @@
+{
+    "version": "1.37",
+    "homepage": "https://www.nirsoft.net/utils/computer_activity_view.html",
+    "url": "https://www.nirsoft.net/utils/lastactivityview.zip",
+    "bin": "LastActivityView.exe",
+    "shortcuts": [
+        [
+            "LastActivityView.exe",
+            "NirSoft\\LastActivityView"
+        ]
+    ],
+    "persist": [
+        "lastactivityview_lng.ini",
+        "lastactivityview.cfg"
+    ],
+    "hash": "09976fd76ae40a608f424655cda82b2be77c426c88ea95af78378b47630397bf",
+    "description": "View the latest computer activity.",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/lastactivityview.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/lastactivityview.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\lastactivityview_lng.ini\") -and !(Test-Path \"$dir\\lastactivityview_lng.ini\")) { New-Item \"$dir\\lastactivityview_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\lastactivityview.cfg\") -and !(Test-Path \"$dir\\lastactivityview.cfg\")) { New-Item \"$dir\\lastactivityview.cfg\" -ItemType File | Out-Null }"
+    ]
+}

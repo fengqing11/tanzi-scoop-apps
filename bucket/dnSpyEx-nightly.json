@@ -1,0 +1,47 @@
+{
+    "version": "2026-11-18-run861-id44338762727",
+    "description": "Revival of the well known .NET debugger and assembly editor, dnSpy",
+    "homepage": "https://github.com/dnSpyEx/dnSpy",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://nightly.link/dnSpyEx/dnSpy/actions/runs/44338762727/dnSpy-net-win64.zip#/dl.7z",
+            "hash": "8e99f9a9df4add00839e72c398008816ae3a80367db384e1dc8a70b51439e8d5"
+        },
+        "32bit": {
+            "url": "https://nightly.link/dnSpyEx/dnSpy/actions/runs/44338762727/dnSpy-net-win32.zip#/dl.7z",
+            "hash": "96c3bcbaf3fb8e6367c96f9927ce9253a3ab0e87e95343b29f1d1f8c65015070"
+        }
+    },
+    "bin": [
+        [
+            "dnSpy.Console.exe",
+            "dnSpyEx.Console-nightly"
+        ],
+        [
+            "dnSpy.exe",
+            "dnSpyEx-nightly"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "dnSpy.exe",
+            "dnSpyEx Nightly"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/dnSpyEx/dnSpy/actions/runs?status=success&branch=master&per_page=1&exclude_pull_requests=true",
+        "regex": "{\"id\":(?<runid>\\d+),.*?\"run_number\":(?<runnumber>\\d+).*?\"created_at\":\"(?<date>\\d+-\\d+-\\d+)T",
+        "replace": "${date}-run${runnumber}-id${runid}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://nightly.link/dnSpyEx/dnSpy/actions/runs/$matchRunid/dnSpy-net-win64.zip#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://nightly.link/dnSpyEx/dnSpy/actions/runs/$matchRunid/dnSpy-net-win32.zip#/dl.7z"
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "version": "1.10",
+    "homepage": "https://www.nirsoft.net/utils/tcp_connect_problem_view.html",
+    "url": "https://www.nirsoft.net/utils/tcpconnectproblemview.zip",
+    "bin": "TCPConnectProblemView.exe",
+    "shortcuts": [
+        [
+            "TCPConnectProblemView.exe",
+            "NirSoft\\TCPConnectProblemView"
+        ]
+    ],
+    "persist": [
+        "tcpconnectproblemview_lng.ini",
+        "tcpconnectproblemview.cfg"
+    ],
+    "hash": "ec2ac85ae12d85414474a7f20ecacd4f1030822c48b2f822c9137a5285c01963",
+    "description": "Monitor TCP connection problems.",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/tcpconnectproblemview.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/tcpconnectproblemview.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\tcpconnectproblemview_lng.ini\") -and !(Test-Path \"$dir\\tcpconnectproblemview_lng.ini\")) { New-Item \"$dir\\tcpconnectproblemview_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\tcpconnectproblemview.cfg\") -and !(Test-Path \"$dir\\tcpconnectproblemview.cfg\")) { New-Item \"$dir\\tcpconnectproblemview.cfg\" -ItemType File | Out-Null }"
+    ]
+}

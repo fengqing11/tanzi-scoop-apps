@@ -1,0 +1,31 @@
+{
+    "version": "1.80",
+    "homepage": "https://www.nirsoft.net/utils/mweather.html",
+    "url": "https://www.nirsoft.net/utils/mweather.zip",
+    "bin": "mweather.exe",
+    "shortcuts": [
+        [
+            "mweather.exe",
+            "NirSoft\\MetarWeather"
+        ]
+    ],
+    "persist": [
+        "mweather_lng.ini",
+        "mweather.cfg"
+    ],
+    "hash": "bdbd47b211647f9a308bb073012b9b129efff6de5a6d95893041635e5d867f56",
+    "description": "Decode METAR weather reports, and display them in a simple weather report table.",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/mweather.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/mweather.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\mweather_lng.ini\") -and !(Test-Path \"$dir\\mweather_lng.ini\")) { New-Item \"$dir\\mweather_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\mweather.cfg\") -and !(Test-Path \"$dir\\mweather.cfg\")) { New-Item \"$dir\\mweather.cfg\" -ItemType File | Out-Null }"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "version": "1.15",
+    "homepage": "https://www.nirsoft.net/utils/exif_data_view.html",
+    "url": "https://www.nirsoft.net/utils/exifdataview.zip",
+    "bin": "ExifDataView.exe",
+    "shortcuts": [
+        [
+            "ExifDataView.exe",
+            "NirSoft\\ExifDataView"
+        ]
+    ],
+    "persist": [
+        "exifdataview_lng.ini",
+        "exifdataview.cfg"
+    ],
+    "hash": "0f45ca559056837401f3934a39db0b74ba24ecfde97dc6bc2e7211f2ae9e7e47",
+    "description": "Displays the Exif data stored inside .jpg image files",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/exifdataview.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/exifdataview.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\exifdataview_lng.ini\") -and !(Test-Path \"$dir\\exifdataview_lng.ini\")) { New-Item \"$dir\\exifdataview_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\exifdataview.cfg\") -and !(Test-Path \"$dir\\exifdataview.cfg\")) { New-Item \"$dir\\exifdataview.cfg\" -ItemType File | Out-Null }"
+    ]
+}

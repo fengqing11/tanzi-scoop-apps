@@ -1,0 +1,27 @@
+{
+    "version": "0.14",
+    "description": "A simple tool of website benchmark. http benchmark tool to ran out your server bandwidth.",
+    "homepage": "https://github.com/maintell/webBenchmark",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/maintell/webBenchmark/releases/download/0.14/webBenchmark_x64.exe",
+            "hash": "b193c0a00922a62ef3659434ebe73d077ccbf0c8ea3674567f93ed953fcf4f36"
+        }
+    },
+    "bin": [
+        "webBenchmark_x64.exe",
+        [
+            "webBenchmark_x64.exe",
+            "webBenchmark"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/maintell/webBenchmark/releases/download/$version/webBenchmark_x64.exe"
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "version": "0.8.0",
+    "description": "A Flash Player emulator written in Rust",
+    "homepage": "https://ruffle.rs/",
+    "license": {
+        "identifier": "Apache License & MIT License",
+        "url": "https://github.com/ruffle-rs/ruffle/blob/master/LICENSE.md"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.8.0/ruffle-0.8.0-windows-x86_64.zip",
+            "hash": "7833834077b76700dd69e01c0dbd8e7fce735235da555a59f9e83f27793bcf82"
+        },
+        "32bit": {
+            "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.8.0/ruffle-0.8.0-windows-x86_32.zip",
+            "hash": "efa494d6aa671b15ffb73644894b80fa20cf5daee8f6e677ba00ccc920ea05ed"
+        }
+    },
+    "shortcuts": [
+        [
+            "ruffle.exe",
+            "ruffle"
+        ]
+    ],
+    "checkver": {
+        "github": "https://api.github.com/repos/ruffle-rs/ruffle/releases/latest",
+        "jsonpath": "$.assets[*].browser_download_url",
+        "regex": "/releases/download/v([\\d.]+)/(?<x86>ruffle-([\\d.]+)-windows-x86_32\\.zip).*?(?<x64>ruffle-([\\d.]+)-windows-x86_64\\.zip)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ruffle-rs/ruffle/releases/download/v$version/$matchX64"
+            },
+            "32bit": {
+                "url": "https://github.com/ruffle-rs/ruffle/releases/download/v$version/$matchX86"
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "version": "0.4.5",
+    "description": "Bring your agent companion into the chat apps you already use. Runs on your machine, no server.",
+    "homepage": "https://mingle.build",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/earayu/Mingle/releases/download/v0.4.5/mingle-0.4.5-windows-amd64.tar.gz",
+            "hash": "e5d346816522f026f47156dd2d09e6f859b14a3225f1e165ffae07b50326edf8"
+        },
+        "arm64": {
+            "url": "https://github.com/earayu/Mingle/releases/download/v0.4.5/mingle-0.4.5-windows-arm64.tar.gz",
+            "hash": "afaecfbf66f8bf9cd7259520d2f737aa6aab24d03009111d05a53250c94d3451"
+        }
+    },
+    "shortcuts": [
+        [
+            "Mingle.exe",
+            "Mingle"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/earayu/Mingle"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/earayu/Mingle/releases/download/v$version/mingle-$version-windows-amd64.tar.gz"
+            },
+            "arm64": {
+                "url": "https://github.com/earayu/Mingle/releases/download/v$version/mingle-$version-windows-arm64.tar.gz"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}

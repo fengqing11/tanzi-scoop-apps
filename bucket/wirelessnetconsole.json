@@ -1,0 +1,31 @@
+{
+    "version": "1.00",
+    "homepage": "https://www.nirsoft.net/utils/wireless_net_console.html",
+    "url": "https://www.nirsoft.net/utils/wirelessnetconsole.zip",
+    "bin": "WirelessNetConsole.exe",
+    "shortcuts": [
+        [
+            "WirelessNetConsole.exe",
+            "NirSoft\\WirelessNetConsole"
+        ]
+    ],
+    "persist": [
+        "wirelessnetconsole_lng.ini",
+        "wirelessnetconsole.cfg"
+    ],
+    "hash": "6b365808b7526bcfcee1cf870dd4d0602669695481ed70ed6edb2f4572abb78a",
+    "description": "View wireless networks information (console application)",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/wirelessnetconsole.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/wirelessnetconsole.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\wirelessnetconsole_lng.ini\") -and !(Test-Path \"$dir\\wirelessnetconsole_lng.ini\")) { New-Item \"$dir\\wirelessnetconsole_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\wirelessnetconsole.cfg\") -and !(Test-Path \"$dir\\wirelessnetconsole.cfg\")) { New-Item \"$dir\\wirelessnetconsole.cfg\" -ItemType File | Out-Null }"
+    ]
+}

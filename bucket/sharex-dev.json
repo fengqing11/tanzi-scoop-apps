@@ -1,0 +1,40 @@
+{
+    "version": "22.4.0.2176",
+    "description": "Screen capture, file sharing and productivity tool. (Dev. Version)",
+    "homepage": "https://getsharex.com",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ShareX/DevBuilds/releases/download/v22.4.0.2176/ShareX-22.4.0.2176-portable-x64.zip",
+            "hash": "ee057c503c0348da7eb6132d53aaf698e1f060c3de329648a2d2dd1ef55a39cc"
+        }
+    },
+    "pre_install": "if (!(Test-Path \"$persist_dir\\PersonalPath.cfg\")) { New-Item \"$dir\\PersonalPath.cfg\" | Out-Null }",
+    "bin": "ShareX.exe",
+    "shortcuts": [
+        [
+            "ShareX.exe",
+            "ShareX Dev"
+        ]
+    ],
+    "persist": [
+        "PersonalPath.cfg",
+        "ShareX"
+    ],
+    "checkver": {
+        "github": "https://github.com/ShareX/DevBuilds",
+        "jsonpath": "$.tag_name",
+        "regex": "v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ShareX/DevBuilds/releases/download/v$version/ShareX-$version-portable-x64.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/ShareX/DevBuilds/releases/tag/v$version",
+            "regex": "$basename</td>\\s*<td><code>$sha256</code>"
+        }
+    }
+}

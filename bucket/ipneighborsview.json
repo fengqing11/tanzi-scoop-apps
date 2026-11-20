@@ -1,0 +1,31 @@
+{
+    "version": "1.04",
+    "homepage": "https://www.nirsoft.net/utils/ip_neighbor_table_view.html",
+    "url": "https://www.nirsoft.net/utils/ipneighborsview.zip",
+    "bin": "IPNeighborsView.exe",
+    "shortcuts": [
+        [
+            "IPNeighborsView.exe",
+            "NirSoft\\IPNeighborsView "
+        ]
+    ],
+    "persist": [
+        "ipneighborsview_lng.ini",
+        "ipneighborsview.cfg"
+    ],
+    "hash": "38b6134531b5bf79ec9a3819b55be6cb167cd4724103216a920a4b510e657ae4",
+    "description": "View the IP neighbor table on Windows 10/8/7/Vista",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/ipneighborsview.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/ipneighborsview.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\ipneighborsview_lng.ini\") -and !(Test-Path \"$dir\\ipneighborsview_lng.ini\")) { New-Item \"$dir\\ipneighborsview_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\ipneighborsview.cfg\") -and !(Test-Path \"$dir\\ipneighborsview.cfg\")) { New-Item \"$dir\\ipneighborsview.cfg\" -ItemType File | Out-Null }"
+    ]
+}

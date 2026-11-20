@@ -1,0 +1,57 @@
+{
+    "version": "1.5.2",
+    "description": "Configuration manager for 86Box",
+    "homepage": "https://github.com/notBald/Avalonia86",
+    "license": {
+        "identifier": "MIT",
+        "url": "https://github.com/notBald/Avalonia86/blob/master/LICENSE"
+    },
+    "notes": [
+        "ATTENTION: You must manually set the path to the 86box executable within the app.",
+        "  1. Run 'scoop prefix 86box' in a terminal and copy the output.",
+        "  2. Open Avalonia 86, click 'Tools' > 'Program Settings'.",
+        "  3. Paste the path into the 86box executable path field.",
+        "Learn more: https://github.com/notBald/Avalonia86#how-to-use"
+    ],
+    "depends": [
+        "extras/86box",
+        "extras/86box-roms"
+    ],
+    "suggest": {
+        ".NET Desktop Runtime 9.0": "versions/windowsdesktop-runtime-9.0"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/notBald/Avalonia86/releases/download/v1.5.2/Avalonia-86-for-Windows-x64-v1.5.2.zip",
+            "hash": "f9fcc5bdfdf9ca95ba300f312a1efc8563fec743d24eae2243aebd766fe81d87"
+        },
+        "arm64": {
+            "url": "https://github.com/notBald/Avalonia86/releases/download/v1.5.2/Avalonia-86-for-Windows-ARM64-v1.5.2.zip",
+            "hash": "369daf06a0c9ff81b1b9811d955e2835105e8546320fe98304d49ced8eb03654"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\")) {",
+        "   New-Item \"$persist_dir\" -ItemType Directory | Out-Null",
+        "   New-Item \"$persist_dir\\Avalonia86.sqlite\" -ItemType File | Out-Null",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "Avalonia86.exe",
+            "Avalonia 86"
+        ]
+    ],
+    "persist": "Avalonia86.sqlite",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/notBald/Avalonia86/releases/download/v$version/Avalonia-86-for-Windows-x64-v$version.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/notBald/Avalonia86/releases/download/v$version/Avalonia-86-for-Windows-ARM64-v$version.zip"
+            }
+        }
+    }
+}

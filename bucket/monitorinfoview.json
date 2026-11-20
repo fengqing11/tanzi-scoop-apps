@@ -1,0 +1,31 @@
+{
+    "version": "1.25",
+    "homepage": "https://www.nirsoft.net/utils/monitor_info_view.html",
+    "url": "https://www.nirsoft.net/utils/monitorinfoview.zip",
+    "bin": "MonitorInfoView.exe",
+    "shortcuts": [
+        [
+            "MonitorInfoView.exe",
+            "NirSoft\\MonitorInfoView"
+        ]
+    ],
+    "persist": [
+        "monitorinfoview_lng.ini",
+        "monitorinfoview.cfg"
+    ],
+    "hash": "c5dafc3524ec161889ae39d158cef53ef66fa6b51b5f95248d5a7dab3bae9b2c",
+    "description": "displays essential information about your monitor.",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/monitorinfoview.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/monitorinfoview.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\monitorinfoview_lng.ini\") -and !(Test-Path \"$dir\\monitorinfoview_lng.ini\")) { New-Item \"$dir\\monitorinfoview_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\monitorinfoview.cfg\") -and !(Test-Path \"$dir\\monitorinfoview.cfg\")) { New-Item \"$dir\\monitorinfoview.cfg\" -ItemType File | Out-Null }"
+    ]
+}

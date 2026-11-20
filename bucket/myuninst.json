@@ -1,0 +1,31 @@
+{
+    "version": "1.77",
+    "homepage": "https://www.nirsoft.net/utils/myuninst.html",
+    "url": "https://www.nirsoft.net/utils/myuninst.zip",
+    "bin": "myuninst.exe",
+    "shortcuts": [
+        [
+            "myuninst.exe",
+            "NirSoft\\MyUninstaller"
+        ]
+    ],
+    "persist": [
+        "myuninst_lng.ini",
+        "myuninst.cfg"
+    ],
+    "hash": "22f2fc8d324fcd8d36698e0496d7a4c5b69a09f3a36de533f99c83ba4446f799",
+    "description": "Alternative utility to the standard Add/Remove applet of Windows.",
+    "license": "Freeware",
+    "notes": "If this application is useful to you, please consider donating to NirSoft - https://www.nirsoft.net/donate.html",
+    "checkver": {
+        "url": "https://www.nirsoft.net/pad/myuninst.xml",
+        "xpath": "/XML_DIZ_INFO/Program_Info/Program_Version"
+    },
+    "autoupdate": {
+        "url": "https://www.nirsoft.net/utils/myuninst.zip"
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\myuninst_lng.ini\") -and !(Test-Path \"$dir\\myuninst_lng.ini\")) { New-Item \"$dir\\myuninst_lng.ini\" -ItemType File | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\myuninst.cfg\") -and !(Test-Path \"$dir\\myuninst.cfg\")) { New-Item \"$dir\\myuninst.cfg\" -ItemType File | Out-Null }"
+    ]
+}

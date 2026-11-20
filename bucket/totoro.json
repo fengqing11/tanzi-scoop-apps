@@ -1,0 +1,19 @@
+{
+    "version": "2.4.3",
+    "description": "A Windows 10/11 only application that is a go to for all things anime.",
+    "homepage": "https://github.com/insomniachi/Totoro",
+    "license": "MIT",
+    "url": "https://github.com/insomniachi/Totoro/releases/download/v2.4.3/Totoro-2.4.3-setup-x64.exe",
+    "hash": "5292b187e3c389baa11e7e1619b505daa61cfed6e3f6ce5d945986be0c059b74",
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "Totoro.exe",
+            "Totoro"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/insomniachi/Totoro/releases/download/v$version/Totoro-$version-setup-x64.exe"
+    }
+}
